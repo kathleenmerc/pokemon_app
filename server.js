@@ -8,7 +8,8 @@ app.set("view engine", "jsx")
 app.engine("jsx", reactViews.createEngine())
 
 app.use((req, res, next)=> {
-    console.log("Running for all routes")
+    console.log("Middleware is Running for all routes")
+    next()
 })
 
 app.use(express.urlencoded({extended:false}));
@@ -27,7 +28,8 @@ app.get("/pokemon/new", (req, res) => {
 })
 
 app.post("/pokemon", (req, res) => {
-
+    pokemon.push(req.body)
+    res.redirect("/pokemon")
 })
 
 
