@@ -11,6 +11,8 @@ app.use((req, res, next)=> {
     console.log("Running for all routes")
 })
 
+app.use(express.urlencoded({extended:false}));
+
 app.get("/", (req, res) => {
     res.send("Welcome to the Pokemon App!")
 })
