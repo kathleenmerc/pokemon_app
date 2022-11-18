@@ -7,6 +7,10 @@ const reactViews = require("express-react-views")
 app.set("view engine", "jsx")
 app.engine("jsx", reactViews.createEngine())
 
+app.use((req, res, next)=> {
+    console.log("Running for all routes")
+})
+
 app.get("/", (req, res) => {
     res.send("Welcome to the Pokemon App!")
 })
@@ -18,6 +22,10 @@ app.get("/pokemon", (req, res) => {
 
 app.get("/pokemon/new", (req, res) => {
     res.render("New")
+})
+
+app.post("/pokemon", (req, res) => {
+
 })
 
 

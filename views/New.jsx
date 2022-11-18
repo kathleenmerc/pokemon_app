@@ -12,7 +12,7 @@ class New extends React.Component {
                     <input type="radio" name="pokeball" value="Great Ball" />Great Ball<br/>
                     <input type="radio" name="pokeball" value="Ultra Ball" />Ultra Ball<br/>
                     <input type="radio" name="pokeball" value="Master Ball" />Master Ball<br/>
-                    <input type="submit" name="" value="Throw your Poke ball" />
+                    <input type="submit" name="" value="Throw your Poke Ball!" />
                 </form>
             </div>
         )
