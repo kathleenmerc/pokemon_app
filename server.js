@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:false}));
 
 //HOMEPAGE
 app.get("/", (req, res) => {
-    res.send("Welcome to the Pokemon App!")
+    res.render("Homepage")
 })
 
 //INDEX

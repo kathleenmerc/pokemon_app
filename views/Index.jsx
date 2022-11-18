@@ -7,9 +7,13 @@ class Index extends React.Component {
             color: '#ffffff',
             backgroundColor: '#000000',
             };
+        const bodyStyle = {
+            backgroundColor: "#B90E0A",
+            color: "white"
+        }
         
         return (
-            <div>
+            <div style={bodyStyle}>
                 <h1 style={myStyle}>Welcome to your Pokedex</h1>
                 <ul>
                     {
