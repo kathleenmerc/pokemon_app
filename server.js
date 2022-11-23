@@ -38,7 +38,7 @@ app.get("/pokemon", (req, res) => {
         if (!error) {
             res.status(200).render("Index", { pokemon: allPokemon })
         } else {
-            res.status(400).send(error)
+            res.status(400).send("Uh oh, there seems to be an error")
         }
     })
 })
@@ -54,7 +54,7 @@ app.post("/pokemon", (req, res) => {
             console.log(createdPokemon)
             res.status(200).redirect("/pokemon")
         } else {
-            res.status(400).send(error)
+            res.status(400).send("Uh oh, there seems to be an error")
         }
     })
 })
@@ -65,7 +65,7 @@ app.get("/pokemon/:id", (req, res) => {
         if (!error) {
             res.status(200).render("Show", { pokemon: foundPokemon })
         } else {
-            res.status(400).send(error)
+            res.status(400).send("Uh oh, there seems to be an error")
         }
     })
 })
