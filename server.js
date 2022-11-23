@@ -7,6 +7,8 @@ const Pokemon = require("./models/pokemon")
 const reactViews = require("express-react-views")
 const mongoose = require('mongoose')
 
+
+//CONNECTION TO DATABASE
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -16,9 +18,11 @@ mongoose.connection.once("open", () => {
     console.log("Connected to mongoDB")
 })
 
+//SET UP ENGINE
 app.set("view engine", "jsx")
 app.engine("jsx", reactViews.createEngine())
 
+//MIDDLEWARE
 app.use((req, res, next)=> {
     console.log("Middleware is Running for all routes")
     next()
@@ -26,6 +30,7 @@ app.use((req, res, next)=> {
 
 // Returns middleware that only parses URL-encoded data
 app.use(express.urlencoded({extended:false}));
+
 
 //HOMEPAGE
 app.get("/", (req, res) => {
@@ -43,6 +48,7 @@ app.get("/pokemon", (req, res) => {
     })
 })
 
+//NEW
 app.get("/pokemon/new", (req, res) => {
     res.render("New")
 })

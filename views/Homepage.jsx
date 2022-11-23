@@ -49,4 +49,4 @@ class Homepage extends React.Component {
 }
 
 
-module.exports = Homepage
+module.exports = Homepage 
