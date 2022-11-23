@@ -47,7 +47,7 @@ class Show extends React.Component {
                 <div style={containerStyle}>
                     <h1 style={titleStyle}>Gotta Catch 'Em All</h1>
                     <h2>{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
-                    <img src={`https://img.pokemondb.net/artwork/${name}.jpg`} alt={name + " image"}></img>
+                    <img src={img} alt={name + " image"}></img>
                     <p style={buttonStyle}><a href={"/pokemon"}>Back</a>
                     </p>
                 </div>

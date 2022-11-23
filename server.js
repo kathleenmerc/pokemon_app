@@ -49,6 +49,8 @@ app.get("/pokemon/new", (req, res) => {
 
 //CREATE
 app.post("/pokemon", (req, res) => {
+    const image = "https://img.pokemondb.net/artwork/" + req.body.name + ".jpg"
+    req.body.img = image
     Pokemon.create(req.body, (error, createdPokemon) => {
         if (!error) {
             console.log(createdPokemon)
