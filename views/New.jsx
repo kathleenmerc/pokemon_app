@@ -7,6 +7,7 @@ class New extends React.Component {
                 <h1>Catch a New Pokemon!</h1>
                 <form action="/pokemon" method="POST">
                     Pokemon Name: <input type="text" name="name" /><br/>
+                    Put image link: <input type="text" name="img" /><br/>
                     Choose your Poke Ball: <br/>
                     <input type="radio" name="pokeball" value="Poke Ball" />Poke Ball<br/>
                     <input type="radio" name="pokeball" value="Great Ball" />Great Ball<br/>

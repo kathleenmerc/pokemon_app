@@ -57,17 +57,20 @@ app.post("/pokemon", (req, res) => {
             res.status(400).send(error)
         }
     })
-
-    pokemon.push(req.body)
-    res.redirect("/pokemon")
 })
 
 //SHOW
 app.get("/pokemon/:id", (req, res) => {
-    //res.send(req.params.id)
-    res.render("Show", pokemon[req.params.id])
+    Pokemon.findById(req.params.id, (error, foundPokemon) => {
+        if (!error) {
+            res.status(200).render("Show", { pokemon: foundPokemon })
+        } else {
+            res.status(400).send(error)
+        }
+    })
 })
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
+

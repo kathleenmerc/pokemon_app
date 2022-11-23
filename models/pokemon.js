@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const pokemonSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    img: { data: Buffer, type: String }
+    img: { type: String, required: true }
 },
 {
     timestamps: true
